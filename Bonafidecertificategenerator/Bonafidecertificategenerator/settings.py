@@ -11,9 +11,15 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+from django.contrib import messages
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+API_KEY ="34LPSch1tM8bS5UyfGZdKQdPi3kejXkdh9"
+AUTH_TOKEN ="e9b6ebf86a182545a23254674757dea6"
 
 
 # Quick-start development settings - unsuitable for production

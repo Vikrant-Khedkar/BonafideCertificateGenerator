@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,67 +9,91 @@
     <link rel='stylesheet' href="{% static 'home/style.css' %}">
 
 </head>
+
 </head>
 
-<body style="background-image: url('{% static 'home/bg.png'%}') ;">
+
+<body style="background-image: url('{% static 'home/bg4.png'%}') ;">
     <div id="demoFont">
 
         <center>
             <h1> Bonafide Certificate Generator </h1>
         </center>
-        <hr style="border-color: rgb(194, 6, 6);">
-        <form>
+        
+        <form action="/home/" method="POST" >
+            <br>
+            <br>
+            <br>
+            {% csrf_token%}
             <center>
+                <table CELLSPACING=30px>
+                    <tr>
+                        <td><label for="Name" >Name:</label></td>
+                        <td><input type="text" id="Name" name="Name" placeholder="First Middle Last" title="Enter your name in given format"
+                                style="width: 300px ;placeholder=" First Middle Last"
+                                title="Enter First Middle Last name"></td>
+                        <td> <label for="Year" >Year:</label>
+                        </td>
 
-            <label for="name" style="margin-right: 39px;">Name:</label>
 
-            <input type="text" id="name" name="name" value="(First Middle Last)" placeholder="First Middle Last" title="Enter First Middle Last name">
+                        <td><select name="Year" id="Year" " onchange=" showselected(this.value)"
+                                style="width: 350px ;" title="select your current year">
+                                <option value="First Year" selected>First Year</option>
+                                <option value="Second Year">Second Year</option>
+                                <option value="Third Year">Third Year</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td> <label for="Course">Course:</label>
+                        </td>
+                        <td><select name="Course" id="Course" onchange="showselected(this.value)"
+                                style="width: 350px ; " title="select your course">
+                                <option value="Computer Engineering">Computer Engineering</option>
+                                <option value="Mechanical Engineering">Mechanical Engineering</option>
+                                <option value="Civil Engineering">Civil Engineering</option>
+                                <option value="Electrical Engineering">Electrical Engineering</option>
+                            </select></td>
 
-            <label for="Year" style="margin-right: 88px;">Year:</label>
+                        <td> <label for="Division" >Division:</label>
+                        </td>
+                        <td><select name="Division" id="Division" onchange="showselected(this.value)"
+                                style="width: 350px ;" title="select your division">
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                                <option value="Shift">Shift</option>
+                            </select></td>
 
+                    </tr>
+                    <tr>
+                        <td> <label for="Rollno">RollNo:</label>
+                        </td>
+                        <td><input type="text" id="Rollno" name="Rollno" style="width: 300px; margin-right: 65px;"
+                                placeholder="Enter Roll Number" title="enter your rollnumber in integer"></td>
 
-            <select name="Year" id="Year" " onchange="showselected(this.value)" title="select your current year">
-                <option value="First Year" selected>First Year</option>
-                <option value="Second Year">Second Year</option>
-                <option value="Third Year">Third Year</option>
-            </select>
-            <br><br>
+                        <td><label for="EnrollNo" >EnrollNo:</label></td>
 
-            <label for="Course">Course:</label>
+                        <td><input type="text" id="EnrollNo" name="EnrollNo" style="width: 300px; margin-right: 50px;"
+                                placeholder="Enter in numbers" title="enter your EnrollmentNo in integer"></td>
+                    </tr>
+                    <tr>
+                        <td> <label for="Gender">Gender:</label>
+                        </td>
+                        <td><select name="Gender" id="Gender" onchange="showselected(this.value)"
+                                style="width: 350px; " title="select your gender">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select></td>
+                        <td> <label for="Email">Email:</label> </td>
+                        <td><input type="text" id="Email" name="Email" style="width: 300px; margin-right: 50px;"
+                            placeholder="Enter Email" title="enter your Email ID"></td>
 
-            <select name="Course" id="Course" onchange="showselected(this.value)" style="margin-right: 82px;" title="select your course">
-                <option value="Computer Engineering">Computer Engineering</option>
-                <option value="Mechanical Engineering">Mechanical Engineering</option>
-                <option value="Civil Engineering">Civil Engineering</option>
-                <option value="Electrical Engineering">Electrical Engineering</option>
-            </select>
+                    </tr>
+                    </table>    
 
-            <label for="Division">Division:</label>
+                    <br><br>
 
-            <select name="Division" id="Division" onchange="showselected(this.value)" title="select your division">
-                 <option value="A">A</option>
-                 <option value="B">B</option>
-                 <option value="C">C</option>
-                 <option value="Shift">Shift</option>
-            </select>
-            <br><br>
-
-            <label for="Rollno" style="margin-right: 15px;" >Rollno:</label>
-
-            <input type="text" id="Rollno" name="Rollno" style="width: 400px; margin-right: 65px;"placeholder="Enter in numbers" title="enter your rollnumber in integer">
-
-            <label for="Gender" style="margin-right: 13px;">Gender:</label>
-
-            <select name="Gender" id="Gender" onchange="showselected(this.value)" title="select your gender">
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-           </select>
-           <br><br>
-           
-           
-            <br><br><br><br><br><br>
-
-            <button type="submit" align="center" title="submit form">Submit</button>
+                    <button type="submit" align="center" title="submit form" >Submit</button>
             </center>
 
 
