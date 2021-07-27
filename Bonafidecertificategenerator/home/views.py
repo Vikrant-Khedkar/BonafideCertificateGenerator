@@ -118,7 +118,7 @@ def index(request):
                 purpose='Fee for Bonafide Certificate',
                 send_email=True,
                 email=Email,
-                redirect_url=url
+                redirect_url=url    
                 )
                 
             # print the long URL of the payment request.
@@ -132,7 +132,7 @@ def index(request):
             
                    
         else:
-           return HttpResponse("error")
+           return HttpResponse("Student not found")
    
     return render(request, "home/index.html")
 
